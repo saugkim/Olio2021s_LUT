@@ -1,5 +1,6 @@
 Viikon 5 harjoitustehtävät / Week 5 exercises  
-![me](https://github.com/Daisyliu6/Daisyliu6/blob/master/me.gif)
+![me](https://github.com/Daisyliu6/Daisyliu6/blob/master/me.gif)  
+https://stackoverflow.com/questions/60094768/how-to-display-an-animated-gif-in-a-github-readme-file  
 
 In Finnish
 
