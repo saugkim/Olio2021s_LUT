@@ -1,6 +1,4 @@
 Viikon 5 harjoitustehtävät / Week 5 exercises  
-![me](https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/Webp.net-gifmaker.gif)  
-https://stackoverflow.com/questions/60094768/how-to-display-an-animated-gif-in-a-github-readme-file  
 
 In Finnish
 
@@ -23,8 +21,11 @@ jonka avulla maksu veloitetaan tililtä.
 
  
 
-5.3.
-images
+5.3.  
+
+
+![me](https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/Week53.png)  
+
 Edellä on useita erilaisia luokkia, jotka ovat kuitenkin menneet järjestyksessä sekaisin. 
 Järjestä luokat takaisin oikeaan järjestykseen niin, että Character-luokasta periytyvät 
 kaikki ne luokat, jotka tunnistat hahmoiksi ja WeaponBehaviour-luokasta periytyvät kaikki aseet. 
@@ -84,3 +85,5 @@ Above are multiple different classes that are not in order. Organize them back i
 
 5.5. Create 5.3. UML diagram as a program that doesn't have to do anything more than print text (excluding constructors). Create a mainclass where you can create new characters and weapons for the characters. They don't have to fight against each other, a print is enough. Note that WeaponBehaviour in Character is public.
 
+![me](https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/Webp.net-gifmaker.gif)  
+https://stackoverflow.com/questions/60094768/how-to-display-an-animated-gif-in-a-github-readme-file  
