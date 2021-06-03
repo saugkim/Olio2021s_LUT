@@ -1,6 +1,13 @@
 # Olio-ohjelmoiti 2021 Summer LUT
 
+## TOOLS used  
 
-### How to create gif from images    
+### Eclipse IDE for Java project  
+
+
+### Umbrello for UML diagram  
+
+
+### gifmaker to Create gif from images    
 https://gifmaker.me/
 
