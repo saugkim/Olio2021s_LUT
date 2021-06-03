@@ -1,5 +1,5 @@
-Viikon 5 harjoitustehtävät / Week 5 exercises
-
+Viikon 5 harjoitustehtävät / Week 5 exercises  
+![me](https://github.com/Daisyliu6/Daisyliu6/blob/master/me.gif)
 
 In Finnish
 
