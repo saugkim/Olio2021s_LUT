@@ -85,5 +85,4 @@ Above are multiple different classes that are not in order. Organize them back i
 
 5.5. Create 5.3. UML diagram as a program that doesn't have to do anything more than print text (excluding constructors). Create a mainclass where you can create new characters and weapons for the characters. They don't have to fight against each other, a print is enough. Note that WeaponBehaviour in Character is public.
 
-![me](https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/Webp.net-gifmaker.gif)  
 https://stackoverflow.com/questions/60094768/how-to-display-an-animated-gif-in-a-github-readme-file  
