@@ -5,5 +5,7 @@ Tools used: **Umbrello 2.32.0**
 6.2. Draw bank and its accounts as UML file.  
 Account is abstract class with 3 abstract methods, those methods are implemented in child class of Regular and Credit account classes.
 
+[source java code here](https://github.com/saugkim/Olio2021s_LUT/tree/main/Week6/src)  
+
 <img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Week6/6_2_Bank.PNG" alt="drawing" width="600"/> 
 
