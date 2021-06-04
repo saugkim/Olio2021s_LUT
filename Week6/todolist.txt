@@ -1,0 +1,271 @@
+6-1
+
+Tässä harjoituksessa tavoitteena on tehdä yksinkertainen kassajärjestelmä talletuspankkiin. 
+Tilejä on kahdenlaisia: tavallisia ja luotollisia. 
+Luotollisilla tileillä on luottovara, jonka verran tili saa olla miinuksella. 
+Tavallinen tili ei voi mennä miinukselle. 
+Tileille voi tallettaa rahaa ja niistä voi tehdä nostoja. 
+Yksittäisen tilin tiedot voi tulostaa. 
+Tilit ovat numeroituja ja tilin tapahtumat kohdistetaan tiliin numeron avulla. 
+Sekä yksittäisen että kaikkien tilien tiedot voi tulostaa.
+ Tilejä on myös mahdollista poistaa. 
+ 
+ Tee tältä pohjalta tekstipohjainen käyttöliittymä ohjelmaa varten. 
+ Tämä ensimmäinen tehtävä on siis pelkän valikon (käyttöliittymän) rakentaminen. 
+ Muut toiminnot tulevat myöhemmissä tehtävissä.
+
+#######################
+
+En:  In this exercise you are to make a simple banking system. 
+There are two types of accounts: normal and credit. 
+Credit accounts have a credit limit and the account can go to negative by that amount. 
+A normal account cannot go negative. 
+You can deposit and withdraw money from the accounts. 
+You can print individual account information. 
+Accounts are numbered and all transactions / events require the number. 
+
+Finally, you can print out all accounts and you can also remove accounts. 
+Note! This first exercise is just to create a menu for the system, 
+all other functionalities are to be done in the later parts.
+
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 1
+Give an account number: 555-1234
+Amount of money to deposit: 2000
+Account number: 555-1234
+Amount of money: 2000
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 3
+Give an account number: 555-1234
+Amount of money to deposit: 10000
+Account number: 555-1234
+Amount of money: 10000
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 4
+Give an account number: 568-55975542
+Amount of money to withdraw: 2000
+Account number: 568-55975542
+Amount of money: 2000
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 5
+Give the account number of the account to delete: 123123-456456
+Account number: 123123-456456
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 10
+Invalid choice.
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 2
+Give an account number: 131313-222222
+Amount of money to deposit: 59801
+Give a credit limit: 200000
+Account number: 131313-222222
+Amount of money: 59801
+Credit: 200000
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 7
+Prints every account
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 6
+Give the account number of the account to print information from: 555-1234
+Account number: 555-1234
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 0
+
+
+
+6-3 
+Fin: Toteuta ensin pankki-luokan toiminta. Pankilla on tieto useista erilaisista tileistä, joita se sisältää sekä sillä on metodeja tilien lisäämiseksi ja poistamiseksi. Tämän lisäksi pankilla on metodi, jolla sen tilejä voidaan etsiä. Metodi ottaa sisäänsä etsittävän tilinumeron ja palauttaa tiliolion tai tyhjän. Integroi tämä luokka mukaan aikasemmin tekemääsi käyttöliittymään.
+
+#############################
+
+En: Create the functionality for Bank-class. Bank as information on different accounts it contains and there are methods to add or remove accounts. There should also be a method to search for accounts. This methods takes the account number as parameter and returns an account object or nothing. Integrate this to the system menu you did.
+
+
+Example output:
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 1
+Give an account number: 555-2256
+Amount of money to deposit: 100000
+Adding to bank: 555-2256,100000
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 2
+Give an account number: 10001-225
+Amount of money to deposit: 250000
+Give a credit limit: 10000
+Adding to bank: 10001-225,250000,10000
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 7
+All accounts:
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 5
+Give the account number of the account to delete: 123-4561
+Account removed.
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 3
+Give an account number: 553228975
+Amount of money to deposit: 2000
+Depositing to the account: 553228975 the amount 2000
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 4
+Give an account number: 25667
+Amount of money to withdraw: 10000
+Withdrawing from the account: 25667 the amount 10000
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 6
+Give the account number of the account to print information from: 198554
+Searching for account: 198554
+
+*** BANK SYSTEM ***
+1) Add a regular account
+2) Add a credit account
+3) Deposit money
+4) Withdraw money
+5) Remove an account
+6) Print account information
+7) Print all accounts
+0) Quit
+Your choice: 0
