@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView2, textView3, textView4, textView5;
     EditText editText3, editText4, editText5;
 
-    public static String MESSAGE = "Hello world";
+    public static String MESSAGE = "Hello World!";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
