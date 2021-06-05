@@ -6,7 +6,8 @@ Tools used: **Android Studio**
 [source java code here](https://github.com/saugkim/Olio2021s_LUT/blob/main/Week7/app/src/main/java/org/lut/week7/MainActivity.java) 
 
 ### Assignments  
-7.1. Create a user interface what has one Button. Pressing the button should print "Hello World!" to the console.
+7.1. Create a user interface what has one Button. Pressing the button should print "Hello World!" to the console.  
+**SEE BOTTOM LEFT corner**  
 
 <table>
   <tr>
