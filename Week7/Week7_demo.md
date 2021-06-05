@@ -1,6 +1,6 @@
 ## Demonstration of Week 7 assignments   
 
-Tools used: **Android Studio**   
+Tools used: **Android Studio 4.2.1**   
 
 
 [source java code here](https://github.com/saugkim/Olio2021s_LUT/blob/main/Week7/app/src/main/java/org/lut/week7/MainActivity.java) 
