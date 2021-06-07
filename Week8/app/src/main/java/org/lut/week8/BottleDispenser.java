@@ -54,8 +54,8 @@ public class BottleDispenser {
     }
 
 
-    public String addMoney() {
-        this.money += 1.0;
+    public String addMoney(double amount) {
+        this.money += amount;
         return "Klink! Added more money!";
     }
 
