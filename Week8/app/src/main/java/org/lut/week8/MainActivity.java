@@ -5,30 +5,39 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     //
     BottleDispenser bd = BottleDispenser.getInstance();
-    Button addMoenyBtn, buyBottleBtn, returnMoneyBtn;
+    Button addMoneyBtn, buyBottleBtn, returnMoneyBtn;
     TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        addMoneyBtn = (Button) findViewById(R.id.addButton);
+        buyBottleBtn = (Button) findViewById(R.id.buyButton);
+        returnMoneyBtn = (Button) findViewById(R.id.returnButton);
+        textView = (TextView) findViewById(R.id.textView);
     }
 
     public void addMoney(View v){
-        bd.addMoney();
+        String ret = bd.addMoney();
+        textView.setText(ret);
     }
 
     public void buyBottle(View v) {
-        bd.buyBottle("1");
+        String ret = bd.buyBottle("1");
+        textView.setText(ret);
     }
 
     public void returnMoney(View v) {
-        bd.returnMoney();
+        String ret = bd.returnMoney();
+        textView.setText(ret);
     }
 }
 

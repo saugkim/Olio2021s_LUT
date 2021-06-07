@@ -39,10 +39,6 @@ public class BottleDispenser {
     public void listBottles() {
         for (int i=0; i<bottles;i++) {
 
-            //String ret = String.format("%1$d. Name: %2$s\n", i+1, bottleList.get(i).getName());
-            //String ret1 = String.format("\tSize: %1$.1f\tPrice: %2$.2f", bottleList.get(i).getSize(), bottleList.get(i).getPrice());
-            //ret1 = ret1.replace(",", ".");
-            //System.out.println(ret+ret1);
             String ret = String.format("%1$d. Name: %2$s\n", i+1, bottleList.get(i).getName());
             String koko = String.format("%1$.1f", bottleList.get(i).getSize());
             koko = koko.replace(",", ".");
@@ -57,16 +53,18 @@ public class BottleDispenser {
         }
     }
 
-    public void addMoney() {
+
+    public String addMoney() {
         this.money += 1.0;
-        System.out.println("Klink! Added more money!");
+        return "Klink! Added more money!";
     }
 
     public void removeBottle(int index) {
         bottleList.remove(index);
     }
 
-    public void buyBottle(String choice) {
+    public String buyBottle(String choice) {
+        String ret="";
 
         int idx = -1;
         idx = Integer.parseInt(choice)-1;
@@ -75,25 +73,30 @@ public class BottleDispenser {
         if (this.bottles >= 1 & this.money>=bottleList.get(idx).getPrice()) {
             this.bottles -= 1;
             this.money -= bottleList.get(idx).getPrice();
-            System.out.println("KACHUNK! "+ bottleList.get(idx).getName() + " came out of the dispenser!");
+            //System.out.println("KACHUNK! "+ bottleList.get(idx).getName() + " came out of the dispenser!");
+            ret = "KACHUNK! " + bottleList.get(idx).getName() + " came out of the dispenser!";
             removeBottle(idx);
-            return;
+            return ret;
         }
 
         if (this.money < bottleList.get(idx).getPrice()) {
-            System.out.println("Add money first!");
-            return;
+            return "Add money first!";
         }
 
+        return ret;
     }
 
-    public void returnMoney() {
+    public String returnMoney() {
+        String ret = "";
         if (this.money == 0) {
-            System.out.println("Klink klink!! All money gone!");
+            //System.out.println("Klink klink!! All money gone!");
+            ret = "Klink klink!! All money gone!";
         } else {
             String tmp = String.format("%1$.2f", this.money);
-            System.out.println("Klink klink. Money came out! You got "+tmp+"€ back");
+            //System.out.println("Klink klink. Money came out! You got "+tmp+"€ back");
+            ret = "Klink klink. Money came out! You got " + tmp + "€ back";
         }
+        return ret;
 
     }
 }
