@@ -23,6 +23,10 @@ public class BottleDispenser {
 }
 ```
 
+8.2-5. Demo clip for other tasks  
+
+![me]()
+
 8.2. Create a graphical user interface for the BottleDispenser.  
 Use the functionality that has already been made, change the console prints to a graphical user interface. 
 
@@ -36,4 +40,17 @@ It is recommended to use SeekBar-component that works as a slider to change the 
     1 SeekBar object and 1 TextView object on top of the add Money button 
     TextView to show the selected value from the seekbar  
     
-demo clip of 8.2 and 8.3 
+    
+8.4. Add a possibility to buy different sodas in different sizes.  
+One possiblity is to use drop-down list for buying the bottles.   
+This means the user chooses from the drop-down list the bottle they want to buy and its size.  Afterwards the BottleDispenser either sells the product or says that they are out.
+
+    1 Spinner object (to select item, there are total 6 different type of product to buy) 
+    on top of the Buy Botton
+
+
+8.5. Add a functionality that makes it possible to print receipt of the last purchase for the user. The receipt should contain information that it is a receipt and what was purchased (name and price at least). The receipt is not printed to the user interface but instead, written to a file (that is defined in the program).
+    
+    1 Button object to print receipt to a file
+    filename is timestamp.txt, user does not take care of this.
+
