@@ -25,7 +25,7 @@ public class BottleDispenser {
 
 8.2-5. Demo clip for other tasks  
 
-![me]()
+![me](https://github.com/saugkim/Olio2021s_LUT/blob/main/Week8/week8.gif)
 
 8.2. Create a graphical user interface for the BottleDispenser.  
 Use the functionality that has already been made, change the console prints to a graphical user interface. 
