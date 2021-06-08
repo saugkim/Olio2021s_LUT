@@ -8,6 +8,7 @@
 bin/
 tmp/
 *.tmp
+*.mp4
 *.bak
 *.swp
 *~.nib
