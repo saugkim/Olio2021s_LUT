@@ -7,9 +7,11 @@ public class Bottle {
     private double total_energy;
     private double size;
     private double prize;
+    private int productID;
 
 
     public Bottle(){
+        this.productID = 0;
         this.name = "Pepsi Max";
         this.manufacturer = "Pepsi";
         this.total_energy = 0.3;
@@ -17,12 +19,17 @@ public class Bottle {
         this.prize = 1.80;
     }
 
-    public Bottle(String name, String manuf, double totE, double size, double price){
+    public Bottle(int id, String name, String manuf, double totE, double size, double price){
+        this.productID = id;
         this.name = name;
         this.manufacturer = manuf;
         this.total_energy = totE;
         this.size = size;
         this.prize = price;
+    }
+
+    public int getProductID() {
+        return productID;
     }
 
     public String getName(){
@@ -49,6 +56,7 @@ public class Bottle {
 
 
     public String printBottle() {
-        return "bottles";
+        String ret = "Purchased item: "+ this.name + "  price: " + this.prize +"€";
+        return ret;
     }
 }

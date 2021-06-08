@@ -2,22 +2,39 @@ package org.lut.week8;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-    //
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.sql.Timestamp;
+
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
     BottleDispenser bd = BottleDispenser.getInstance();
     Button addMoneyBtn, buyBottleBtn, returnMoneyBtn;
     TextView textView;
     SeekBar seekBar;
     TextView barValue;
+    Spinner spinner;
     int amount;
-    public static String DEFAULT_VALUE ="SELECT MONEY: 0€";
+    int selectedIndex = -1;
+
+    String recieptMessage = "";
+
+    public static String DEFAULT_VALUE ="MONEY TO ADD: 0€";
+
+    String[] products = {   "Cola Big(1L) 2.2€", "Cola Small(0.5L) 1.2€",
+                            "Fanta Big(1L) 2.5€", "Fanta Small(0.5L) 1.5€",
+                            "Sprite Big(1L) 2.2€", "Sprite Small(0.5L) 1.2€" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +45,19 @@ public class MainActivity extends AppCompatActivity {
         buyBottleBtn = (Button) findViewById(R.id.buyButton);
         returnMoneyBtn = (Button) findViewById(R.id.returnButton);
         textView = (TextView) findViewById(R.id.textView);
+        textView.setText("Display message here");
 
         seekBar = (SeekBar) findViewById(R.id.seekBar);
-        barValue = (TextView) findViewById(R.id.varValue);
+        barValue = (TextView) findViewById(R.id.varText);
         seekBar.setProgress(0);
         barValue.setText(DEFAULT_VALUE);
 
+        spinner = (Spinner) findViewById(R.id.spinner);
+        spinner.setOnItemSelectedListener(this);
+
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, products);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int seekValue = 0;
@@ -50,10 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                barValue.setText("SELECT MONEY: " + seekValue + "€");
+                barValue.setText("MONEY TO ADD: " + seekValue + "€");
             }
         });
-
     }
 
     public void setAmount(View v) {
@@ -69,13 +92,47 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buyBottle(View v) {
-        String ret = bd.buyBottle("1");
+        if (selectedIndex == -1) {
+            textView.setText("select item from upper dropdown menu");
+            return;
+        }
+        String ret = bd.buyBottle(selectedIndex);
         textView.setText(ret);
+        recieptMessage = bd.print(selectedIndex);
+        bd.removeBottle(selectedIndex);
+    }
+
+    public void printReceipt(View v) {
+
+        textView.setText(recieptMessage);
+
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        OutputStreamWriter osw = null;
+        String s = recieptMessage;
+        String filename = String.valueOf(timestamp.getTime() + ".txt");
+        try {
+            osw = new OutputStreamWriter(this.openFileOutput(filename, Context.MODE_PRIVATE));
+            osw.write(s);
+            osw.close();
+            textView.setText(recieptMessage + "\nsaved in " + filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void returnMoney(View v) {
         String ret = bd.returnMoney();
         textView.setText(ret);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+        selectedIndex = position;
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+        Toast.makeText(getApplicationContext(), "Select from the dropdown menu", Toast.LENGTH_LONG).show();
     }
 }
 /*
@@ -89,58 +146,7 @@ This means the user chooses from the drop-down list the bottle they want to buy 
 Afterwards the BottleDispenser either sells the product or says that they are out
 (you can use Spinner component for example).
 
-8.5. Add a functionality that makes it possible to print receipt of the last purchase for the user. The receipt should contain information that it is a receipt and what was purchased (name and price at least). The receipt is not printed to the user interface but instead, written to a file (that is defined in the program).
+8.5. Add a functionality that makes it possible to print receipt of the last purchase for the user.
+The receipt should contain information that it is a receipt and what was purchased (name and price at least).
+The receipt is not printed to the user interface but instead, written to a file (that is defined in the program).
 */
-
-
-/*
-public static void printInfo() {
-		String ret = "\n*** BOTTLE DISPENSER ***\r\n" +
-				"1) Add money to the machine\r\n" +
-				"2) Buy a bottle\r\n" +
-				"3) Take money out\r\n" +
-				"4) List bottles in the dispenser\r\n" +
-				"0) End\r\n";
-		System.out.print(ret);
-	}
-
-	public static void main(String[] args) {
-
-		Scanner scanner = new Scanner(System.in);
-		BottleDispenser bd = new BottleDispenser();
-
-		while(true) {
-			printInfo();
-
-		    System.out.print("Your Choice: ");
-		    String choice = scanner.nextLine();
-
-			if (choice.equals("0")){
-				break;
-			}
-
-			switch(choice) {
-				case "1":
-					bd.addMoney();
-					break;
-				case "2":
-					bd.listBottles();
-					System.out.print("Your choice: ");
-					choice = scanner.nextLine();
-					bd.buyBottle(choice);
-					break;
-				case "3":
-					bd.returnMoney();
-					break;
-				case "4":
-					bd.listBottles();
-					break;
-				default:
-					System.out.println("wrong input");
-					break;
-			}
-
-		}
-		scanner.close();
-	}
- */
