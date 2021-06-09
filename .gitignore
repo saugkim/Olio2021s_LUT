@@ -4,6 +4,8 @@
 .metadata/
 .classpath
 
+/todo/*
+
 .metadata
 bin/
 tmp/
