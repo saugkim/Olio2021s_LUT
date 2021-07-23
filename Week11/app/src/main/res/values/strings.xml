@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Week11</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+    <string name="Home">Home</string>
+    <string name="Setting">Setting</string>
+    <string name="Editable">Setting Edit</string>
+
+    <string name="pref_size_default_value">14</string>
+    <string name="pref_size_summary">@string/pref_size_default_value</string>
+    <string name="pref_size_dialog_title">"Change Text Size</string>
+
+
+    <string name="pref_color_key">text_color_preference</string>
+    <string name="change_text_color">Change Text Color</string>
+    <string name="pref_color_label_red">RED</string>
+    <string name="pref_color_label_blue">BLUE</string>
+    <string name="pref_color_label_green">GREEN</string>
+
+    <string name="pref_color_value_red">RED</string>
+    <string name="pref_color_value_blue">BLUE</string>
+    <string name="pref_color_value_green">GREEN</string>
+
+    <string name="pref_color_dialog_title">Select Text Color</string>
+    <string name="pref_color_default_value">RED</string>
+    <string name="pref_text_color_summary">@string/pref_color_default_value</string>
+    <string-array name="pref_color_option_labels">
+        <item>RED</item>
+        <item>BLUE</item>
+        <item>GREEN</item>
+    </string-array>
+
+    <string-array name="pref_color_option_values">
+        <item>RED</item>
+        <item>BLUE</item>
+        <item>GREEN</item>
+    </string-array>
+
+    <string-array name="pref_color_values">
+        <item>#FF0000</item>
+        <item>#0000FF</item>
+        <item>#00FF00</item>
+    </string-array>
+
+
+    <string name="pref_language_key">text_language_preference</string>
+    <string name="change_language">Change Language</string>
+    <string name="pref_lan_dialog_title">Select Text Color</string>
+    <string name="pref_lan_default_value">ENG</string>
+    <string name="pref_lan_summary">@string/pref_lan_default_value</string>
+    <string-array name="pref_lan_option_labels">
+        <item>ENG</item>
+        <item>FIN</item>
+        <item>FRA</item>
+        <item>GER</item>
+    </string-array>
+    <string-array name="pref_lan_option_values">
+        <item>ENG</item>
+        <item>FIN</item>
+        <item>FRA</item>
+        <item>GER</item>
+    </string-array>
+
+</resources>
