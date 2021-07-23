@@ -25,11 +25,13 @@ Tools used: **Android Studio 4.2.1**
 
 <table>
   <tr>
-    <th>Demo clip</th>
+    <th>Demo clip 10.1-3</th>
+    <th>Demo clip 10.4-5</th>
     <th>Main View</th>
   </tr>
   <tr>
-    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week10.gif" width="250"/></td>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week10_1.gif" width="250"/></td>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week10_2.gif" width="250"/></td>
     <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week10.PNG" width="250"/></td>
   </tr>
 </table>
