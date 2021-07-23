@@ -1,9 +1,22 @@
+## Demonstration of Week 11 assignments   
 
-11.1. Create an application that has a side menu / side bar / navigation drawer and it has Settings (either have settings in the side menu or a link to a settings activity / fragment).
+Tools used: **Android Studio 4.2.1**   
+
+[source java code here](https://github.com/saugkim/Olio2021s_LUT/blob/main/Week11/app/src/main/java/org/lut/week11) 
+
+### Assignments  
+11.1-3 Part 1  
+[source java code here](https://github.com/saugkim/Olio2021s_LUT/blob/main/Week11/app/src/main/java/org/lut/week11) 
+11.1. Create an application that has a side menu / side bar / navigation drawer and it has Settings -> implemented by navigation drawer with setting fragment.  
+
+11.2. Create two text fields. One is "readable" and the other is "writable." Create an option in the settings that allows or blocks the edit of "writable" text field. Set the text in "writable" text field to "readable" text fields when editing is blocked.  
+
+11.3. Create at least four different settings (font size, color, number of rows, height, width, etc.) that can modify how the text in "readable" text field looks like -> implemented with 4 settings of font size, font color, field height and field width
 
 
 
-11.2. Create two text fields. One is "readable" and the other is "writable." Create an option in the settings that allows or blocks the edit of "writable" text field. Set the text in "writable" text field to "readable" text fields when editing is blocked. 
+11.4-5 Part 2
+
 
 
 
