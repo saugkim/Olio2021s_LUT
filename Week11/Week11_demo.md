@@ -14,6 +14,19 @@ Tools used: **Android Studio 4.2.1**
 11.3. Create at least four different settings (font size, color, number of rows, height, width, etc.) that can modify how the text in "readable" text field looks like -> implemented with 4 settings of font size, font color, field height and field width
 
 
+<table>
+  <tr>
+    <th>Navigation Drawer</th>
+    <th>Setting Fragment</th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week11_navigation_drawer.PNG" width="300"/></td>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week11_settingFragment.PNG" width="300"/></td>
+  </tr>
+</table>
+
+
+
 **Part 2 (11.4-5)**  
 [source code here](https://github.com/saugkim/Olio2021s_LUT/blob/main/Week11s/app/src/main/java/org/lut/week11s)   
 
