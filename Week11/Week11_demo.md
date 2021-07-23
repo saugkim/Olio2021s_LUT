@@ -42,9 +42,9 @@ Tools used: **Android Studio 4.2.1**
     <th>Setting Fragment</th>
   </tr>
   <tr>
-    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week11_2.gif" width="250"/></td>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week11_p2.gif" width="250"/></td>
     <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week11_1.PNG" width="250"/></td>
-    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week11_2.PNG" width="250"/></td>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week11_2.gif" width="250"/></td>
   </tr>
 </table>
 
