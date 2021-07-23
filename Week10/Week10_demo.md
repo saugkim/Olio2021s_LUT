@@ -29,8 +29,8 @@ Tools used: **Android Studio 4.2.1**
     <th>Main View</th>
   </tr>
   <tr>
-    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week12.gif" width="250"/></td>
-    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week12.PNG" width="250"/></td>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week10.gif" width="250"/></td>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week10.PNG" width="250"/></td>
   </tr>
 </table>
 
