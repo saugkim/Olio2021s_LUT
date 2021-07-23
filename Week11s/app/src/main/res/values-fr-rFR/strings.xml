@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">domicile</string>
+    <string name="setting">Réglage</string>
+    <string name="displayTextHint">afficher ici</string>
+    <string name="input_text">Saisie de texte</string>
+    <string name="change_language">Langue</string>
+    <string name="pref_lan_dialog_title">Choisir la langue</string>
+    <string name="pref_display_summary">Écrivez quelque chose ici</string>
+    <string name="app_name">La semaine11</string>
+</resources>

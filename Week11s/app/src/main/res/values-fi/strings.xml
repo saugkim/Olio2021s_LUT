@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">koti</string>
+    <string name="setting">Asetukset</string>
+    <string name="displayTextHint">näytä tässä</string>
+    <string name="input_text">Tekstinsyöttö</string>
+    <string name="change_language">Kieli</string>
+    <string name="pref_lan_dialog_title">Valitse kieli</string>
+    <string name="pref_display_summary">Kirjoita jotain tähän</string>
+    <string name="app_name">Viikko11</string>
+</resources>

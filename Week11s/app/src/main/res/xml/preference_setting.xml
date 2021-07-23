@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:defaultValue=""
+        android:key="pref_edittext_display"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/input_text"
+        android:summary="@string/pref_display_summary"/>
+
+    <ListPreference
+        android:defaultValue="@string/pref_lan_default_value"
+        android:entries="@array/pref_lan_option_labels"
+        android:entryValues="@array/pref_lan_option_labels"
+        android:key="pref_list_language"
+        android:title="@string/change_language"
+        android:summary="@string/pref_lan_summary"
+        android:dialogTitle="@string/pref_lan_dialog_title"/>
+</PreferenceScreen>

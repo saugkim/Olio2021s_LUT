@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Woshe11</string>
+    <string name="home">heimat</string>
+    <string name="setting">" Einstellung"</string>
+    <string name="displayTextHint">hier anzeigen</string>
+    <string name="input_text">Text Eingabe</string>
+    <string name="change_language">Sprache</string>
+    <string name="pref_lan_dialog_title">Sprache auswählen</string>
+    <string name="pref_display_summary">Schreiben Sie hier etwas</string>
+</resources>

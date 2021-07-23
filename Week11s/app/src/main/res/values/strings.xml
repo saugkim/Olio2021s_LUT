@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Week11s</string>
+    <string name="home">HOME</string>
+    <string name="setting">SETTING</string>
+    <string name="open" translatable="false">OPEN</string>
+    <string name="close" translatable="false">CLOSE</string>
+
+    <string name="displayTextHint">Display here</string>
+
+
+    <string name="input_text">TEXT INPUT</string>
+    <string name="pref_display_summary">Write something here to display in main window</string>
+
+
+    <string name="pref_language_key" translatable="false">text_language_preference</string>
+    <string name="change_language">LANGUAGE OPTION</string>
+    <string name="pref_lan_dialog_title">Select Language</string>
+    <string name="pref_lan_default_value" translatable="false">ENG</string>
+    <string name="pref_lan_summary" translatable="false">@string/pref_lan_default_value</string>
+    <string-array name="pref_lan_option_labels">
+        <item>ENG</item>
+        <item>FIN</item>
+        <item>FRA</item>
+        <item>GER</item>
+        <item>ESP</item>
+    </string-array>
+    <string-array name="pref_lan_option_values">
+        <item>en</item>
+        <item>fi</item>
+        <item>fr</item>
+        <item>de</item>
+        <item>es</item>
+    </string-array>
+
+
+
+</resources>
