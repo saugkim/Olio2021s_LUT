@@ -22,7 +22,7 @@ Drop down list for area and date retrieved form https://www.finnkino.fi/xml/Thea
 9.3. Start searching for movies in a specific theater by current date. You will need current date and the theater ID. With these, the URL should be in a following form:  
 --> Implemented, when area(theater) is selected from drop down list (spinner), combined with today(current day), 
 url string for finnkino xml query is concatenated as   
-**"https://www.finnkino.fi/xml/Schedule/?area=1029&dt=24.07.2021"** and based on the query,
+**"https://www.finnkino.fi/xml/Schedule/?area=1029&dt=25.07.2021"** and based on the query,
 get movies available in selected area today and display them as list View using Fragment in Main.   
 <br>
 <br>
