@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class TheaterController {
 
     ArrayList<Theater> theaters;
+    public static int DEFAULT_AREA_CODE = 1029;
 
     public TheaterController() {
         theaters = new ArrayList<>();
@@ -27,7 +28,7 @@ public class TheaterController {
         if (searchTheater(location) != null)
             return searchTheater(location).getId();
 
-        return -1;
+        return DEFAULT_AREA_CODE;
     }
 
     public ArrayList<Theater> getTheaters() {

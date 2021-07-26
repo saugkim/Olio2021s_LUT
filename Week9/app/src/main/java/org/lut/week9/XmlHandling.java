@@ -8,7 +8,10 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -41,6 +44,69 @@ public class XmlHandling {
         return "https://www.finnkino.fi/xml/Schedule/?area=" +
                 theaterController.getTheaterID(location) + "&dt=" + df.format(currentDay);
     }
+    
+    public String getXmlUrlString(String location, String date) {
+        //String newDateFormat = date.replaceAll("-", ".");
+        return FINNKINO +"/?area=" + theaterController.getTheaterID(location) + "&dt=" + parseDateFromString(date);
+    }
+
+    public String getCurrentDay() {
+        Date currentDay = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
+        return df.format(currentDay);
+    }
+
+    public String parseDateFromString(String dateInString){
+        try {
+            Date newDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(dateInString);
+
+            SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
+            if (newDate != null)
+                return formatter.format(newDate);
+            else {
+                return getCurrentDay();
+            }
+        } catch (ParseException e) {
+            e.getStackTrace();
+            return getCurrentDay();
+        }
+    }
+
+    public ArrayList<String> getMoviesInSelectedAreaToday(String url, int ta, int tb) {
+        ArrayList<String> movies = new ArrayList<>();
+
+        try {
+            DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document xmlDoc = db.parse(url);
+
+            xmlDoc.getDocumentElement().normalize();
+
+            NodeList nList = xmlDoc.getDocumentElement().getElementsByTagName("Show");
+
+            for (int i=0; i< nList.getLength(); i++) {
+                Node node = nList.item(i);
+                node.getAttributes();
+
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    Element el = (Element) node;
+                    String showStartTime = el.getElementsByTagName("dttmShowStart").item(0).getTextContent();
+                    String showTitle = el.getElementsByTagName("Title").item(0).getTextContent();
+
+                    int temp = Integer.parseInt(showStartTime.substring(11,13));
+                    if (temp >= ta && temp < tb)
+                        movies.add(String.format("%s\t%s\n%s", showStartTime.substring(0,10), showStartTime.substring(11), showTitle));
+                }
+            }
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        }
+        return movies;
+
+    }
 
     public ArrayList<String> getMoviesInSelectedAreaToday(String url) {
         //https://www.finnkino.fi/xml/Schedule/?area=1016&dt=24.07.2021
@@ -63,7 +129,7 @@ public class XmlHandling {
                     String showStartTime = el.getElementsByTagName("dttmShowStart").item(0).getTextContent();
                     String showTitle = el.getElementsByTagName("Title").item(0).getTextContent();
 
-                    movies.add(String.format("%s\t%s\n%s", showStartTime.substring(0,10), showStartTime.substring(11),showTitle));
+                    movies.add(String.format("%s\t%s\n%s", showStartTime.substring(0,10), showStartTime.substring(11), showTitle));
                 }
             }
         } catch (ParserConfigurationException e) {

@@ -30,18 +30,27 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Button button1;
     TextView textView;
 
-    Spinner spinner, spinner2, spinner3;
-    String[] theaters;
+    Spinner spinner, spinner2, spinner3, spinner3child;
+    String[] theaters, startAfter, startBefore;
 
-    ArrayList<String> movieList;
-    ArrayList<String> dateList;
     ArrayList<String> theaterList;
+    ArrayList<String> dateList;
+    ArrayList<String> movieList;
+
+    ArrayAdapter<String> adapter4;
+
+   // ArrayList<String> startAfterTimeList;
+   // ArrayList<String> startBeforeTimeList;
 
     ArrayList<String> listTodaySelectedArea;
 
     String selectedTheater = "";
-    String selectedDate= "";
+    String selectedDate = "";
+    int selectedTimeA = 0;
+    int selectedTimeB = 0;
     String selectedMovie= "";
+    Boolean isDateTimeSelected = false;
+    Boolean isAreaSelected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +65,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         dateList = new ArrayList<>();
         listTodaySelectedArea = new ArrayList<>();
 
-        getMovieList();
-        //getDateList();
-        //getTheaterList();
+        // getMovieList();
+        // getDateList();
+        // getTheaterList();
         theaters = getResources().getStringArray(R.array.theater_array);
+        startAfter = Arrays.copyOfRange(getResources().getStringArray(R.array.time_array), 0,13);
+        //startBefore = Arrays.copyOfRange(getResources().getStringArray(R.array.time_array), 1,12);
 
         xmlHandling = new XmlHandling();
         theaterList = xmlHandling.readTheatersFromXML();
@@ -72,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner = findViewById(R.id.spinner);
         spinner2 = findViewById(R.id.spinner2);
         spinner3 = findViewById(R.id.spinner3);
+        spinner3child = findViewById(R.id.spinner3child);
 
         spinner.setOnItemSelectedListener(this);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_spinner_item, theaterList);
@@ -84,26 +96,43 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner2.setAdapter(adapter2);
 
         spinner3.setOnItemSelectedListener(this);
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_spinner_item, movieList);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_spinner_item, startAfter);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner3.setAdapter(adapter3);
 
+        spinner3child.setOnItemSelectedListener(this);
+        spinner3child.setPrompt("Select Time to start before");
+        //ArrayAdapter<String> adapter4 = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_spinner_item, startBefore);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //spinner3child.setAdapter(adapter4);
+
         button1.setOnClickListener(view -> {
-            Fragment1 frag = new Fragment1();
-            FragmentManager manager = getSupportFragmentManager();
-            FragmentTransaction transaction = manager.beginTransaction();
-            transaction.replace(R.id.container, frag);
-            transaction.commit();
+            //Fragment1 frag = new Fragment1();
+            //FragmentManager manager = getSupportFragmentManager();
+            //FragmentTransaction transaction = manager.beginTransaction();
+            //transaction.replace(R.id.container, frag);
+            //transaction.commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,
+                    Fragment1.newInstance(listTodaySelectedArea)).commit();
         });
     }
 
     public void getQueryResult(String location) {
         listTodaySelectedArea.clear();
         String url = xmlHandling.getXmlUrlString(location);
+        listTodaySelectedArea.addAll(xmlHandling.getMoviesInSelectedAreaToday(url));
+    }
 
-        for (int i=0; i<xmlHandling.getMoviesInSelectedAreaToday(url).size(); i++) {
-            listTodaySelectedArea.add(xmlHandling.getMoviesInSelectedAreaToday(url).get(i));
-        }
+    public void getQueryResult(String location, String dateInString) {
+        listTodaySelectedArea.clear();
+        String url = xmlHandling.getXmlUrlString(location, dateInString);
+        listTodaySelectedArea.addAll(xmlHandling.getMoviesInSelectedAreaToday(url));
+    }
+
+    public void getQueryResult(String location, String dateInString, int timeStartAfter, int timeStartBefore) {
+        listTodaySelectedArea.clear();
+        String url = xmlHandling.getXmlUrlString(location, dateInString);
+        listTodaySelectedArea.addAll(xmlHandling.getMoviesInSelectedAreaToday(url, timeStartAfter, timeStartBefore));
     }
 
     public String getSuperTemp() {
@@ -136,6 +165,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         theaterList.addAll(Arrays.asList(theaters));
     }
 
+
     public void getMovieList() {
         movieList = new ArrayList<>();
         movieList.add("Select Movie");
@@ -162,24 +192,43 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         switch(adapterView.getId()){
             case R.id.spinner:
+                if (pos != 0) {
+                    isAreaSelected = true;
+                }
                 selectedTheater = adapterView.getSelectedItem().toString();
                 break;
             case R.id.spinner2:
                 selectedDate = adapterView.getSelectedItem().toString();
                 break;
             case R.id.spinner3:
-                selectedMovie = adapterView.getSelectedItem().toString();
+                if (pos != 0) {
+                    isDateTimeSelected = true;
+                    selectedTimeA = Integer.parseInt(adapterView.getSelectedItem().toString().substring(0,2));
+                    String[] tmp = getResources().getStringArray(R.array.time_array);
+                    startBefore = Arrays.copyOfRange(tmp, pos + 1, tmp.length);
+                    adapter4 = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, startBefore);
+                    adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinner3child.setAdapter(adapter4);
+                    spinner3child.setSelection(startBefore.length-1);
+                    textView.setText("Select Time to start before");
+                }
+                break;
+            case R.id.spinner3child:
+                selectedTimeB = Integer.parseInt(adapterView.getSelectedItem().toString().substring(0,2));
                 break;
             default:
                 break;
         }
+       // getQueryResult(selectedTheater, selectedDate);
 
-        if (pos != 0) {
-            getQueryResult(selectedTheater);
-            getSupportFragmentManager().beginTransaction().replace(R.id.container,
-                    Fragment1.newInstance(listTodaySelectedArea)).commit();
+        if (isAreaSelected && !isDateTimeSelected) {
+            getQueryResult(selectedTheater, selectedDate);
+            //getQueryResult(selectedTheater);
+            //getSupportFragmentManager().beginTransaction().replace(R.id.container,
+            //        Fragment1.newInstance(listTodaySelectedArea)).commit();
+        } else if (isAreaSelected) {
+            getQueryResult(selectedTheater, selectedDate, selectedTimeA, selectedTimeB);
         }
-        textView.setText(selectedTheater) ;
     }
 
     public String getSuperTemp2() {
