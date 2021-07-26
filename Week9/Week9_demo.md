@@ -50,8 +50,8 @@ get movies available in selected area today and display them as list View using 
   </tr>
   <tr>
     <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week9_part2.gif" width="250"/></td>
-    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week9_part2.PNG" width="250"/></td>
-    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week9_part2s.PNG" width="250"/></td>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week9_task4.PNG" width="250"/></td>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week9_task4s.PNG" width="250"/></td>
   </tr>
 </table>
 
