@@ -69,7 +69,7 @@ UI: 4 spinners (area, date, time after and time before), last spinner appears on
 
 [source code for 9.5](https://github.com/saugkim/Olio2021s_LUT/blob/main/Week9s/app/src/main/java/org/lut/week9)  
 
-**Videl clip**
+**Demo clip**  
 <img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week9_part3.gif" width="250"/>
 
 
