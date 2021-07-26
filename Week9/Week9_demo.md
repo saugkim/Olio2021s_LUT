@@ -64,8 +64,8 @@ UI: 4 spinners (area, date, time after and time before), last spinner appears on
 
 
 **Part3 9.5**  
-9.5. Make a search functionality that searches all theaters for movies with the name. The application should show the results so that it shows the name of the movie, place and time it is shown. The search functionality should work together with the earlier search functionalities AND if no theater is given, it will search through all theaters. Note: There are 9 different areas for theaters if you exclude the more specific ones. ID 1029 does not show all. 
---> Implemented, one more spinner object for search movie by name. Movie list sorted by name. When area is not selected (default), looping through the whole 9 areas, add them all together, show in the gragments. All features implemented in 9.4 is working as it is. Video clip does not include start time window selection.  
+9.5. Make a search functionality that searches all theaters for movies with the name. The application should show the results so that it shows the name of the movie, place and time it is shown. The search functionality should work together with the earlier search functionalities AND if no theater is given, it will search through all theaters. Note: There are 9 different areas for theaters if you exclude the more specific ones. ID 1029 does not show all.  
+--> Implemented, one more spinner object for search movie by name. Movie list sorted by name. When area is not selected (default), looping through the whole 9 areas, add them all together, show in the fragment. All features implemented in 9.4 is working as it is. Video clip does not include start time window selection.  
 
 [source code for 9.5](https://github.com/saugkim/Olio2021s_LUT/tree/main/Week9s5/app/src/main/java/org/lut/week9)
 
