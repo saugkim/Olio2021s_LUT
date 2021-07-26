@@ -40,9 +40,24 @@ get movies available in selected area today and display them as list View using 
 </table>
 
 
-**Part2 (not implemented 9.4-5)**  
+**Part2 (implemented 9.4)**  
 9.4. Add a functionality where a user can input date and time interval that are used to search for movies. Date directly affects the data you are searching for and time interval affects what will finally be shown. So create fields for date input and time interval input (start after, start before). If all fields are left empty, show all movies that run in the selected theater on that date. (one point instead of half a point)
+<table>
+  <tr>
+    <th>Demo clip for 9.4</th>
+    <th>ListView whole time window</th>
+    <th>ListView selected time window</th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week9_part2.gif" width="250"/></td>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week9_part2.PNG" width="250"/></td>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week9_part2s.PNG" width="250"/></td>
+  </tr>
+</table>
 
+
+
+**Unimplemented 9.5**  
 9.5. Make a search functionality that searches all theaters for movies with the name. The application should show the results so that it shows the name of the movie, place and time it is shown. The search functionality should work together with the earlier search functionalities AND if no theater is given, it will search through all theaters. Note: There are 9 different areas for theaters if you exclude the more specific ones. ID 1029 does not show all. (one point instead of half a point)
 
 
