@@ -41,7 +41,14 @@ get movies available in selected area today and display them as list View using 
 
 
 **Part2 (implemented 9.4)**  
-9.4. Add a functionality where a user can input date and time interval that are used to search for movies. Date directly affects the data you are searching for and time interval affects what will finally be shown. So create fields for date input and time interval input (start after, start before). If all fields are left empty, show all movies that run in the selected theater on that date. (one point instead of half a point)
+9.4. Add a functionality where a user can input date and time interval that are used to search for movies. Date directly affects the data you are searching for and time interval affects what will finally be shown. So create fields for date input and time interval input (start after, start before). If all fields are left empty, show all movies that run in the selected theater on that date. (one point instead of half a point)  
+--> implemented, this time, search button shows list of movies in Fragment.
+UI: 4 spinners (area, date, time after and time before), last spinner appears only when third spinner item is selected.  
+ result of selected area only is selected area with current day(today),    
+ result of selected area and selected date(not time) shows available movie in that area and chosen date for all time.   
+ reulst of area and date and time of startAfter shows available movie in the area and selected date and selected time after which movie starts.  
+ last result show selected area and date and start time within selected time window.  
+ 
 <table>
   <tr>
     <th>Demo clip for 9.4</th>
