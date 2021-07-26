@@ -3,11 +3,10 @@
 Tools used:  
 **Android Studio 4.2.1**   
 
-
+[source code here](https://github.com/saugkim/Olio2021s_LUT/blob/main/Week9/app/src/main/java/org/lut/week9)  
 
 ### Assignments  
 **Part 1 (9.1-3)**    
-[source code here](https://github.com/saugkim/Olio2021s_LUT/blob/main/Week9/app/src/main/java/org/lut/week9)  
 
 9.1. Create a graphical user interface where it is possible to list all Finnkino theaters in a drop-down list. User can choose a theater from the list and afterwards the application lists movies shown in that specific theater. You don't have to implement the functionalities yet, more important is to get the components in place. There should be different search criteria like date, time, name of the movie and place.  
 --> Implemented, in main view 3 spinner(drop down) objects for search by area, date, and movie  
