@@ -39,7 +39,7 @@ get movies available in selected area today and display them as list View using 
 </table>
 
 
-**Part2 (implemented 9.4)**  
+**Part 2 (9.4)**  
 9.4. Add a functionality where a user can input date and time interval that are used to search for movies. Date directly affects the data you are searching for and time interval affects what will finally be shown. So create fields for date input and time interval input (start after, start before). If all fields are left empty, show all movies that run in the selected theater on that date. (one point instead of half a point)  
 --> implemented, search button click event shows list of movies in Fragment.  
 UI: 4 spinners (area, date, time after and time before), last spinner appears only when third spinner item is selected.  
@@ -63,15 +63,29 @@ UI: 4 spinners (area, date, time after and time before), last spinner appears on
 
 
 
-**Part3 9.5**  
+**Part 3 9.5**  
 9.5. Make a search functionality that searches all theaters for movies with the name. The application should show the results so that it shows the name of the movie, place and time it is shown. The search functionality should work together with the earlier search functionalities AND if no theater is given, it will search through all theaters. Note: There are 9 different areas for theaters if you exclude the more specific ones. ID 1029 does not show all.  
---> Implemented, one more spinner object for search movie by name. Movie list sorted by name. When area is not selected (default), looping through the whole 9 areas, add them all together, show in the fragment. All features implemented in 9.4 is working as it is. Video clip does not include start time window selection.  
+--> Implemented, one more spinner object for search movie by name. Movie list sorted by name. When area is not selected (default), looping through the whole 9 areas, add them all together, show in the fragment. All features implemented in 9.4 is working as it is. 
 
 [source code for 9.5](https://github.com/saugkim/Olio2021s_LUT/tree/main/Week9s5/app/src/main/java/org/lut/week9)
 
 
 **Demo clip**  
-<img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week9_part3.gif" width="250"/>
+
+<table>
+  <tr>
+    <th>Demo clip 1 for 9.5</th>
+    <th></th>
+    <th>Demo clip 2 for 9.5</th>
+    
+  </tr>
+  <tr>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week9_part3.gif" width="300"/></td>
+   <td></td>
+    <td><img src="https://github.com/saugkim/Olio2021s_LUT/blob/main/Images/week9_part3s.gif" width="300"/></td>
+  </tr>
+</table>
+
 
 
 
