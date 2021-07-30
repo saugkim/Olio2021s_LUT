@@ -17,4 +17,5 @@ https://gifmaker.me/
 
 
 ### Project  
+**NOT IMPLEMENTED**  
 https://docs.google.com/document/d/1kRBlbMIM28oSbYZw_WL9iJRW3A-JCpV5o8Pg05BCcUQ/edit#
